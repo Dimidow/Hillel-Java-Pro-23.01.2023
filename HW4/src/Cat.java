@@ -1,10 +1,10 @@
-public class Cats extends Animals {
+public class Cat extends Animals {
 
 
     public static int catsCounter;
     private final String name;
 
-    public Cats(String name) {
+    public Cat(String name) {
         this.name = name;
         catsCounter++;
     }

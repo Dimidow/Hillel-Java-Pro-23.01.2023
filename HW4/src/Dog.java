@@ -1,9 +1,9 @@
-public class Dogs extends Animals {
+public class Dog extends Animals {
 
     public static int dogsCounter;
     private final String name;
 
-    public Dogs(String name) {
+    public Dog(String name) {
         this.name = name;
         dogsCounter++;
     }

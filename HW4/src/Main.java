@@ -4,22 +4,22 @@ public class Main {
 
         Animals animals = new Animals(); //Here is the 6-th time we used Class.
 
-        Dogs dogOne = new Dogs("Sharik");
-        Dogs dogTwo = new Dogs("Bobik");
-        Dogs dog3 = new Dogs("Bobik");
-        dogOne.run(50);
-        dogOne.swim(10);
-        dogTwo.run(40);
-        dogTwo.swim(9);
+        Dog dogFirst = new Dog("Sharik");
+        Dog dogSecond = new Dog("Bobik");
+        Dog dogThird = new Dog("Bobik");
+        dogFirst.run(50);
+        dogFirst.swim(10);
+        dogSecond.run(40);
+        dogSecond.swim(9);
 
-        Cats cats = new Cats("Rudyi");
-        Cats catsTwo = new Cats("Barsik");
-        cats.run(180);
-        cats.swim(15);
-        catsTwo.run(10);
-        catsTwo.swim(1);
+        Cat catFirst = new Cat("Rudyi");
+        Cat catSecond = new Cat("Barsik");
+        catFirst.run(180);
+        catFirst.swim(15);
+        catSecond.run(10);
+        catSecond.swim(1);
 
         System.out.println("All of animals: " + animals.animalCounter +
-                           " . Dogs: " + Dogs.dogsCounter + " . Cats: " + Cats.catsCounter);
+                           " . Dogs: " + Dog.dogsCounter + " . Cats: " + Cat.catsCounter);
     }
 }
