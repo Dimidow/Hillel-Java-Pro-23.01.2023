@@ -1,25 +1,25 @@
 public class Cat extends Animals {
 
 
-    public static int catsCounter;
-    private final String name;
+    int catsCounter;
+
 
     public Cat(String name) {
-        this.name = name;
-        catsCounter++;
+        super(name);
+        this.getAnimalCounter();
     }
 
     @Override
     public void run(int distance) {
         if (distance <= 200) {
-            System.out.println(name + " runs " + distance + " m");
+            System.out.println(this.getName() + " runs " + distance + " m");
         }
     }
 
     @Override
     public void swim(int distance) {
         if (distance >= 0) {
-            System.out.println(name + " can not swim");
+            System.out.println(this.getName() + " can not swim");
         }
     }
 }
