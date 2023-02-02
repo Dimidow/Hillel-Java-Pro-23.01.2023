@@ -1,8 +1,8 @@
 public class Dog extends Animals {
 
     public Dog(String name) {
-     super(name);
-     this.getAnimalCounter();
+        super(name);
+        this.getAnimalCounter();
     }
 
     @Override

@@ -1,9 +1,5 @@
 public class Cat extends Animals {
 
-
-    int catsCounter;
-
-
     public Cat(String name) {
         super(name);
         this.getAnimalCounter();
