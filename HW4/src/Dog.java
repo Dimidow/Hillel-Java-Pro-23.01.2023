@@ -1,8 +1,10 @@
 public class Dog extends Animals {
 
+    private static int dogsCounter = 0;
+
     public Dog(String name) {
         super(name);
-        this.getAnimalCounter();
+        dogsCounter++;
     }
 
     @Override
@@ -15,7 +17,11 @@ public class Dog extends Animals {
     @Override
     public void swim(int distance) {
         if (distance <= 10) {
-            System.out.println(this.getName() + " swims " + distance + " m");
+            System.out.println(this.getName() + " swim " + distance + " m");
         }
+    }
+
+    protected static int getDogsCounter() {
+        return dogsCounter;
     }
 }

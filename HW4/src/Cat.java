@@ -1,8 +1,10 @@
 public class Cat extends Animals {
 
+    private static int catsCounter = 0;
+
     public Cat(String name) {
         super(name);
-        this.getAnimalCounter();
+        catsCounter++;
     }
 
     @Override
@@ -14,8 +16,10 @@ public class Cat extends Animals {
 
     @Override
     public void swim(int distance) {
-        if (distance >= 0) {
-            System.out.println(this.getName() + " can not swim");
-        }
+        System.out.println(this.getName() + " can not swim even " + distance + " m");
+    }
+
+    protected static int getCatsCounter() {
+        return catsCounter;
     }
 }

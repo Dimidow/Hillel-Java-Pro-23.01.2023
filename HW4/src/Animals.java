@@ -1,25 +1,23 @@
 public abstract class Animals {
 
-    private static int animalCounter;
+    private static int animalsCounter = 0;
     private final String name;
 
 
     public Animals(String name) {
         this.name = name;
-        animalCounter++;
+        animalsCounter++;
     }
 
     public String getName() {
         return name;
     }
 
-    public void run(int distance) {
-    }
+    abstract public void run(int distance);
 
-    public void swim(int distance) {
-    }
+    abstract public void swim(int distance);
 
-    protected int getAnimalCounter() {
-        return animalCounter;
+    protected static int getAnimalsCounter() {
+        return animalsCounter;
     }
 }

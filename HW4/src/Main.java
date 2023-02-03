@@ -5,8 +5,8 @@ public class Main {
         Dog dogFirst = new Dog("Sharik");
         Dog dogSecond = new Dog("Bobik");
         Dog dogThird = new Dog("Bobik");
-        int animalCounter = dogThird.getAnimalCounter();
-        System.out.println("Dogs count: " + animalCounter);
+        int dogsCounter = Dog.getDogsCounter();
+        System.out.println("Dogs count: " + dogsCounter);
 
         dogFirst.run(50);
         dogFirst.swim(10);
@@ -15,11 +15,12 @@ public class Main {
 
         Cat catFirst = new Cat("Rudyi");
         Cat catSecond = new Cat("Barsik");
-        int catsCounter = catSecond.getAnimalCounter() - animalCounter;
+        int catsCounter = Cat.getCatsCounter();
         System.out.println("Cats count: " + catsCounter);
         catFirst.run(180);
         catFirst.swim(15);
         catSecond.run(10);
         catSecond.swim(1);
+        System.out.println("Animals count: " + Animals.getAnimalsCounter());
     }
 }
