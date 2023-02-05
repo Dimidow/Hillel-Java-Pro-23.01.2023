@@ -1,6 +1,6 @@
 package square;
 
-public class Square implements CalcSquare {
+public class Square extends Shape {
 
     @Override
     public double getSquare() {

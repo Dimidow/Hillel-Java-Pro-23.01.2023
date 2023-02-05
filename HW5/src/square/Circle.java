@@ -1,6 +1,6 @@
 package square;
 
-public class Circle implements CalcSquare {
+public class Circle extends Shape {
 
     @Override
     public double getSquare() {

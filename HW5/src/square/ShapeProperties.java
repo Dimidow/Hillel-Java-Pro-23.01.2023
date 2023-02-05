@@ -1,6 +1,6 @@
 package square;
 
-public interface CalcSquare {
+public interface ShapeProperties {
 
     double getSquare();
 }
