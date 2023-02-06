@@ -13,12 +13,12 @@ public class Competitions {
     );
 
     private final List<Obstacle> obstacles = new ArrayList<>(
-        Arrays.asList(new Wall(participants), new Track(participants)) //here need to replace
+        Arrays.asList(new Wall(), new Track())
     );
 
     public void startCompetitions() {
         for (Obstacle obstacle : obstacles) {
-            obstacle.overcome();
+            obstacle.overcome(participants);
         }
     }
 }
