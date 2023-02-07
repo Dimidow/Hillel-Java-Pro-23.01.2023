@@ -55,7 +55,7 @@ public class Tasks {
                 return false;
             } else if (year % 400 == 0) {
                 return true;
-            } else return year % 100 != 0;
+            } else {return year % 100 != 0;}
         } else {
             return false;
         }
