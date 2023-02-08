@@ -22,6 +22,7 @@ dist/
 # JetBrains IDE and git-files
 .idea/
 *.git
+*.iml
 
 # Unit test reports
 TEST*.xml
