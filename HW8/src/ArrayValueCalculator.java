@@ -1,10 +1,9 @@
 import exceptions.ArrayDataException;
 import exceptions.ArraySizeException;
-import exceptions.DataException;
 
 public class ArrayValueCalculator {
 
-    public static void main(String[] args) throws ArraySizeException {
+    public static void main(String[] args) {
 
         String[][] arrayForCalc = new String[][] {
             {"21", "()*)", "33", "41"},
@@ -13,27 +12,28 @@ public class ArrayValueCalculator {
             {"9", "10", "11", "12"}
         };
 
-        int rows = arrayForCalc.length;
-        int columns = arrayForCalc[0].length;
         int dimension = 4;
-
-        if (rows != dimension || columns != dimension) {
-            throw new ArraySizeException("Incorrect array dimension: " + dimension);
-        }
 
         System.out.println("\nResult of doCalc():");
         System.out.println(doCalc(arrayForCalc, dimension));
     }
 
-    private static int doCalc(String[][] arrayForCalc, int dimension) throws ArrayDataException {
+    private static int doCalc(String[][] arrayForCalc, int dimension) throws ArraySizeException, ArrayDataException {
+
+        int rows = arrayForCalc.length;
+        int columns = arrayForCalc[0].length;
+
+        if (rows != dimension || columns != dimension) {
+            throw new ArraySizeException("Incorrect array dimension: " + dimension);
+        }
 
         int sum = 0;
         int i = 0;
         int j = 0;
 
         try {
-            for (; i < dimension - 1; i++) {
-                for (; j < arrayForCalc[dimension - 1].length; j++) {
+            for (; i < arrayForCalc.length; i++) {
+                for (; j < arrayForCalc[0].length; j++) {
                     sum += Integer.parseInt(arrayForCalc[i][j]);
                 }
             }
