@@ -7,6 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import phonebook.PhoneBook;
+
 public class Main {
 
     public static void main(String[] args) throws IOException {
@@ -32,6 +34,21 @@ public class Main {
         calcOccurance(calcOccuranceList);
         System.out.println("\nResult of findOccurance():");
         System.out.println(findOccurance(calcOccuranceList));
+
+
+        PhoneBook phoneBook = new PhoneBook();
+
+        phoneBook.add("Alex", "12345");
+        phoneBook.add("Jack", "123");
+        phoneBook.add("Jack", "1233");
+        phoneBook.add("Pit", "123456");
+
+
+        
+        System.out.println("\nResult of find():");
+        System.out.println(phoneBook.find("Jack"));
+        System.out.println("\nResult of findAll():");
+        System.out.println(phoneBook.findAll("Jack"));
     }
 
     private static int countOccurance(List sourceList, String argsForMatch) {
