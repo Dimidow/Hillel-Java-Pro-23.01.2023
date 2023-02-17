@@ -21,6 +21,7 @@ public class PhoneBook {
     }
 
     public List<Entry> findAll(String name) {
+        if (find(name) == null) {return null;}
         return phoneBook.stream()
                         .filter(entry -> name.equals(entry.getName()))
                         .collect(Collectors.toList());
