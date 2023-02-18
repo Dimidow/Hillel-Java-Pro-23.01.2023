@@ -1,8 +1,8 @@
 package phonebook;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class PhoneBook {
 
@@ -14,16 +14,21 @@ public class PhoneBook {
     }
 
     public Entry find(String name) {
-        return phoneBook.stream()
-                        .filter(entry -> name.equals(entry.getName()))
-                        .findAny()
-                        .orElse(null);
+        for (Entry entry : phoneBook) {
+            if (name.equals(entry.getName())) {
+                return entry;
+            }
+        }
+        return null;
     }
 
     public List<Entry> findAll(String name) {
-        if (find(name) == null) {return null;}
-        return phoneBook.stream()
-                        .filter(entry -> name.equals(entry.getName()))
-                        .collect(Collectors.toList());
+        List<Entry> entries = new ArrayList<>();
+        for (Entry entry : phoneBook) {
+            if (name.equals(entry.getName())) {
+                entries.add(entry);
+            }
+        }
+        return entries.isEmpty() ? null : entries;
     }
 }
