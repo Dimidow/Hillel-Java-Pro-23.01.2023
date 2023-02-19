@@ -3,7 +3,7 @@ import exceptions.ArraySizeException;
 
 public class ArrayValueCalculator {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ArrayDataException, ArraySizeException {
 
         String[][] arrayForCalc = new String[][] {
             {"21", "()*)", "33", "41"},
@@ -38,7 +38,7 @@ public class ArrayValueCalculator {
                 }
             }
         } catch (NumberFormatException numberFormatException) {
-            throw new ArrayDataException("Incorrect value: " + arrayForCalc[i][j] + " on row " + i + " and col " + j, numberFormatException);
+            System.err.println("Incorrect value: " + arrayForCalc[i][j] + " on row " + i + " and col " + j + " " + numberFormatException.getMessage());
         }
 
         return sum;
