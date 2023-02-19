@@ -13,12 +13,18 @@ public class ArrayValueCalculator {
         };
 
         int dimension = 4;
-
-        System.out.println("\nResult of doCalc():");
-        System.out.println(doCalc(arrayForCalc, dimension));
+        
+        try {
+            System.out.println("\nResult of doCalc():");
+            System.out.println(doCalc(arrayForCalc, dimension));
+        } catch (ArraySizeException e) {
+            System.err.println(e.getMessage());
+        } catch (ArrayDataException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
-    private static int doCalc(String[][] arrayForCalc, int dimension) throws ArraySizeException, ArrayDataException {
+    public static int doCalc(String[][] arrayForCalc, int dimension) throws ArraySizeException, ArrayDataException {
 
         int rows = arrayForCalc.length;
         int columns = arrayForCalc[0].length;
