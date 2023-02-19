@@ -23,7 +23,7 @@ public class CoffeeOrderBoard {
         return orderPriorityQueue.poll();
     }
 
-    public Order deliverByOrderNumber(int number) {
+    public Order deliver(int number) {
         Iterator<Order> iterator = orderPriorityQueue.iterator();
         while (iterator.hasNext()) {
             Order order = iterator.next();

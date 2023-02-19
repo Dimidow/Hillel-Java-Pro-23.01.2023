@@ -14,8 +14,8 @@ public class Main {
 
         System.out.println("\nresult of deliver():");
         System.out.println(coffeeOrderBoard.deliver());
-        System.out.println("\nresult of deliverByOrderNumber():");
-        System.out.println(coffeeOrderBoard.deliverByOrderNumber(3));
+        System.out.println("\nresult of deliver() with arg:");
+        System.out.println(coffeeOrderBoard.deliver(3));
         System.out.println("\nresult of draw():");
         coffeeOrderBoard.draw();
     }
