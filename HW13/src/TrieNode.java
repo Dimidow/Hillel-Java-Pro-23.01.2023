@@ -1,4 +1,6 @@
-public class TrieNode {
+import java.util.Iterator;
+
+public class TrieNode implements Iterable<Node> {
 
     private Node rootNode;
 
@@ -45,6 +47,11 @@ public class TrieNode {
             }
         }
         return currentNode;
+    }
+
+    @Override
+    public Iterator<Node> iterator() {
+        return new NodeIterator(rootNode);
     }
 
     @Override
