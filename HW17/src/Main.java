@@ -2,6 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
         ThreadSafeList threadSafeList = new ThreadSafeList();
+        String stringObjectForThreadSafeList = "some string Object";
 
         new Thread(() -> {
             System.out.println("\nresult of remove() in new Thread:");
@@ -9,12 +10,12 @@ public class Main {
         }).start();
         new Thread(() -> {
             System.out.println("\nadd() in new Thread.");
-            threadSafeList.add("some string Object");
+            System.out.println(threadSafeList.add(stringObjectForThreadSafeList));
         }).start();
 
         new Thread(() -> {
             System.out.println("\nresult of get() in new Thread:");
-            System.out.println(threadSafeList.get("some string Object"));
+            System.out.println(threadSafeList.get(threadSafeList.indexOf(stringObjectForThreadSafeList)));
         }).start();
 
         PetrolStation petrolStation = new PetrolStation(13000);
