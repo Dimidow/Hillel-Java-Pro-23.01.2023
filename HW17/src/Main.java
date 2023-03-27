@@ -1,8 +1,10 @@
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
-        ThreadSafeList threadSafeList = new ThreadSafeList();
-        String stringObjectForThreadSafeList = "some string Object";
+        List<String> threadSafeList = new ThreadSafeList<String>();
+        String stringObjectForThreadSafeList = "String";
 
         new Thread(() -> {
             System.out.println("\nresult of remove() in new Thread:");

@@ -4,9 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class ThreadSafeList<T> implements List {
+public class ThreadSafeList<E> implements List<E> {
 
-    private final List<T> threadSafeList = new LinkedList<>();
+    private final List<E> threadSafeList = new LinkedList<>();
 
     @Override
     public int size() {
@@ -41,7 +41,7 @@ public class ThreadSafeList<T> implements List {
     @Override
     public boolean add(Object o) {
         synchronized (threadSafeList) {
-            return threadSafeList.add((T) o);
+            return threadSafeList.add((E) o);
         }
     }
 
@@ -83,9 +83,9 @@ public class ThreadSafeList<T> implements List {
     }
 
     @Override
-    public Object get(int index) {
+    public E get(int index) {
         synchronized (threadSafeList) {
-            return threadSafeList.contains(index) ? threadSafeList.get(index) : null;
+            return threadSafeList.contains(threadSafeList.get(index)) ? threadSafeList.get(index) : null;
         }
     }
 
@@ -100,7 +100,7 @@ public class ThreadSafeList<T> implements List {
     }
 
     @Override
-    public Object remove(int index) {
+    public E remove(int index) {
         return null;
     }
 
