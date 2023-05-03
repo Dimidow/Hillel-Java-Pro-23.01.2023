@@ -1,0 +1,9 @@
+[ 1 containers found ]
+[ 0 containers skipped ]
+[ 1 containers started ]
+[ 0 containers aborted ]
+[ 1 containers successful ]
+[ 0 containers failed ]
+[ 1 tests found ]
+[ 0 tests skip ]
+Test run finished after 4 ms
