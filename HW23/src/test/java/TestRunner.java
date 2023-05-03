@@ -5,9 +5,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.example.ProjectTestRunner;
-import org.example.TestResult;
-import org.example.TestResultParser;
+import org.my.homeworks.ProjectTestRunner;
+import org.my.homeworks.TestResult;
+import org.my.homeworks.TestResultParser;
 import org.junit.runner.Result;
 
 

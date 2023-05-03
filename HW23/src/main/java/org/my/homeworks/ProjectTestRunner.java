@@ -1,4 +1,4 @@
-package org.example;
+package org.my.homeworks;
 
 
 import java.io.File;

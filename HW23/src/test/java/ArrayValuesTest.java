@@ -1,4 +1,4 @@
-import org.example.ArrayValues;
+import org.my.homeworks.ArrayValues;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;

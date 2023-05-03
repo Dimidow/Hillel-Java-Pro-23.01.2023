@@ -1,4 +1,4 @@
-package org.example;
+package org.my.homeworks;
 
 public class SimpleMathLibrary {
 

@@ -1,4 +1,4 @@
-package org.example;
+package org.my.homeworks;
 
 public class ArrayValues {
     public int[] extractAfterLastFour(int[] array) {

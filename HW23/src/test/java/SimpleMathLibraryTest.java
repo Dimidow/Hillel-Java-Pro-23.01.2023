@@ -1,5 +1,5 @@
-import org.example.MyTestWatcher;
-import org.example.SimpleMathLibrary;
+import org.my.homeworks.MyTestWatcher;
+import org.my.homeworks.SimpleMathLibrary;
 import org.junit.Rule;
 import org.junit.Test;
 
