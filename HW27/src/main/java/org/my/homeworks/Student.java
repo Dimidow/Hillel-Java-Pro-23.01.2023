@@ -7,10 +7,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Student")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-@EqualsAndHashCode
 public class Student {
 
     @Id

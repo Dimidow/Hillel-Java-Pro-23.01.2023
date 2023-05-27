@@ -3,8 +3,12 @@ package org.my.homeworks;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class HibernateSession {
 
+    private static final Logger logger = LoggerFactory.getLogger(HibernateSession.class);
     private static final SessionFactory sessionFactory = buildSessionFactory();
 
     public static SessionFactory getSessionFactory() {
@@ -20,7 +24,7 @@ public class HibernateSession {
             configuration.addAnnotatedClass(org.my.homeworks.Student.class); */
             return configuration.buildSessionFactory();
         } catch (Throwable ex) {
-            System.err.println("Initial SessionFactory creation failed." + ex);
+            logger.info("Initial SessionFactory creation failed." + ex);
             throw new ExceptionInInitializerError(ex);
         }
     }

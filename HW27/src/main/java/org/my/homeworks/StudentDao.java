@@ -5,8 +5,13 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class StudentDao implements Dao {
+public class StudentDao implements Dao<Student, Integer> {
+
+
+    private static final Logger logger = LoggerFactory.getLogger(StudentDao.class);
 
     private final SessionFactory sessionFactory;
 
@@ -15,67 +20,72 @@ public class StudentDao implements Dao {
     }
 
     @Override
-    public void addStudent(Student student) {
+    public void add(Student student) {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
             session.save(student);
             transaction.commit();
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
-            e.printStackTrace();
+            rollbackTransaction(transaction);
         }
     }
 
     @Override
-    public void updateStudent(Student student) {
+    public void update(Student student) {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
             session.update(student);
             transaction.commit();
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
-            e.printStackTrace();
+            rollbackTransaction(transaction);
         }
     }
 
     @Override
-    public void deleteStudent(Student student) {
+    public void delete(Student student) {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
             session.delete(student);
             transaction.commit();
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
-            e.printStackTrace();
+            rollbackTransaction(transaction);
         }
     }
 
+
     @Override
-    public List<Student> getAllStudents() {
+    public List<Student> getAllEntities() {
         try (Session session = sessionFactory.openSession()) {
             return session.createQuery("FROM Student", Student.class).list();
         } catch (Exception e) {
+            logger.info("Error during getting all entities" + e);
             e.printStackTrace();
             return null;
         }
     }
 
     @Override
-    public Student getStudentById(int id) {
+    public Student getEntityById(Integer id) {
         try (Session session = sessionFactory.openSession()) {
             return session.get(Student.class, id);
         } catch (Exception e) {
+            logger.info("Error during getting entity by ID" + e);
             e.printStackTrace();
             return null;
+        }
+    }
+
+    private void rollbackTransaction(Transaction transaction) {
+        if (transaction != null) {
+            try {
+                transaction.rollback();
+            } catch (Exception e) {
+                logger.info("Error during rolling back transaction " + e);
+                e.printStackTrace();
+            }
         }
     }
 }

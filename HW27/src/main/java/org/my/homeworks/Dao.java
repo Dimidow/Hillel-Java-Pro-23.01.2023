@@ -2,15 +2,15 @@ package org.my.homeworks;
 
 import java.util.List;
 
-public interface Dao {
+public interface Dao<T, ID extends Integer> {
 
-    void addStudent(Student Student);
+    void add(T entity);
 
-    void updateStudent(Student student);
+    void update(T entity);
 
-    void deleteStudent(Student student);
+    void delete(T entity);
 
-    List<Student> getAllStudents();
+    List<T> getAllEntities();
 
-    Student getStudentById(int id);
+    T getEntityById(ID id);
 }
