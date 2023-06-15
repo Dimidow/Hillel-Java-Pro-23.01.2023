@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.my.homeworks</groupId>
+    <artifactId>HW31</artifactId>
+    <version>1.0.0</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.xml.ws</groupId>
+            <artifactId>jakarta.xml.ws-api</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.sun.xml.ws/jaxws-rt -->
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-rt</artifactId>
+            <version>4.0.1</version>
+
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.sun.xml.ws/jaxws-ri -->
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-ri</artifactId>
+            <version>2.3.2</version>
+            <type>pom</type>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <wsdlUrls>
+                                <wsdlUrl>http://localhost:8080/OrderService?wsdl</wsdlUrl>
+                            </wsdlUrls>
+                            <packageName>org.my.homeworks.generated_sources</packageName>
+                            <keep>true</keep>
+                            <sourceDestDir>src/main/java</sourceDestDir>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
