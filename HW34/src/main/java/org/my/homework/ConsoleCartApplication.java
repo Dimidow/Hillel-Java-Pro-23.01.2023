@@ -1,16 +1,18 @@
 package org.my.homework;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.my.homework.configuration.MyConfiguration;
+import org.my.homework.services.ConsoleCartService;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-@SpringBootApplication
 public class ConsoleCartApplication {
 
-    @Autowired
-    private ConsoleCartService consoleCartService;
-
     public static void main(String[] args) {
-        SpringApplication.run(ConsoleCartApplication.class, args);
+        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext();
+        annotationConfigApplicationContext.register(MyConfiguration.class);
+        annotationConfigApplicationContext.refresh();
+
+        ConsoleCartService consoleCartService = annotationConfigApplicationContext.getBean("consoleCartService", ConsoleCartService.class);
+        consoleCartService.run();
+        annotationConfigApplicationContext.close();
     }
 }

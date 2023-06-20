@@ -1,20 +1,21 @@
-package org.my.homework;
+package org.my.homework.services;
 
 import java.util.Scanner;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
+import org.my.homework.models.Cart;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ConsoleCartService implements CommandLineRunner {
+public class ConsoleCartService {
 
 
-    @Autowired
     private Cart cart;
 
-    @Override
-    public void run(String... args) {
+    public ConsoleCartService(Cart cart) {
+        this.cart = cart;
+    }
+
+    public void run() {
         System.out.println("\nCart demo-version with add, remove, show products - options");
         Scanner scanner = new Scanner(System.in);
         boolean running = true;

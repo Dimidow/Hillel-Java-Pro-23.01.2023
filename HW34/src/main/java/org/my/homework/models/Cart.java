@@ -1,8 +1,8 @@
-package org.my.homework;
+package org.my.homework.models;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.my.homework.services.ProductRepository;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -10,12 +10,14 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class Cart {
 
-    @Autowired
+
+    private ProductRepository productRepository;
     private List<Product> products;
 
-    @Autowired
-    private ProductRepository productRepository;
-
+    public Cart(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+        products = productRepository.getAllProductsList();
+    }
 
     public void addProductById(int id) {
         Product product = productRepository.getProductById(id);

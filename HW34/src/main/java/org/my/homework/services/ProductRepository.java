@@ -1,20 +1,21 @@
-package org.my.homework;
+package org.my.homework.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.context.annotation.Bean;
+import org.my.homework.models.Product;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ProductRepository {
 
-    @Bean
+    private List<Product> products;
+
+
+    public ProductRepository(List<Product> products) {
+        this.products = products;
+    }
+
     public List<Product> getAllProductsList() {
-        List<Product> products = new ArrayList<>();
-        products.add(new Product(13, "Milk", 50.5));
-        products.add(new Product(21, "Chicken", 150.8));
-        products.add(new Product(7, "Tomato", 65.0));
         return products;
     }
 
