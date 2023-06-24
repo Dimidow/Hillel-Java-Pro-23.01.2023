@@ -19,9 +19,9 @@ public class OrderClient{
         QName qname = new QName("http://homeworks.my.org/", "OrderServiceImplService");
         Service service = Service.create(wsdlUrl, qname);
 
-        OrderServiceImplService orderServiceImplService = service.getPort(OrderServiceImplService.class);
+       /* OrderServiceImplService orderServiceImplService = service.getPort(OrderServiceImplService.class);
         OrderService orderService = orderServiceImplService.getOrderServiceImplPort();
-        orderService.addOrder(new Order());
+        orderService.addOrder(new Order());*/
 
 
     }

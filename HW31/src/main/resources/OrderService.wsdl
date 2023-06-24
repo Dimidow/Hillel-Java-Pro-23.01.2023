@@ -4,61 +4,65 @@
 <xsd:import namespace="http://homeworks.my.org/" schemaLocation="http://localhost:8080/OrderService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="getAllOrders"/>
+<message name="getAllOrders">
+<part name="parameters" element="tns:getAllOrders"/>
+</message>
 <message name="getAllOrdersResponse">
-<part name="return" type="tns:arrayList"/>
-</message>
-<message name="getOrderById">
-<part name="arg0" type="xsd:int"/>
-</message>
-<message name="getOrderByIdResponse">
-<part name="return" type="tns:order"/>
+<part name="parameters" element="tns:getAllOrdersResponse"/>
 </message>
 <message name="addOrder">
-<part name="arg0" type="tns:order"/>
+<part name="parameters" element="tns:addOrder"/>
 </message>
-<message name="addOrderResponse"/>
+<message name="addOrderResponse">
+<part name="parameters" element="tns:addOrderResponse"/>
+</message>
+<message name="getOrderById">
+<part name="parameters" element="tns:getOrderById"/>
+</message>
+<message name="getOrderByIdResponse">
+<part name="parameters" element="tns:getOrderByIdResponse"/>
+</message>
 <portType name="OrderService">
 <operation name="getAllOrders">
 <input wsam:Action="http://homeworks.my.org/OrderService/getAllOrdersRequest" message="tns:getAllOrders"/>
 <output wsam:Action="http://homeworks.my.org/OrderService/getAllOrdersResponse" message="tns:getAllOrdersResponse"/>
 </operation>
-<operation name="getOrderById">
-<input wsam:Action="http://homeworks.my.org/OrderService/getOrderByIdRequest" message="tns:getOrderById"/>
-<output wsam:Action="http://homeworks.my.org/OrderService/getOrderByIdResponse" message="tns:getOrderByIdResponse"/>
-</operation>
 <operation name="addOrder">
 <input wsam:Action="http://homeworks.my.org/OrderService/addOrderRequest" message="tns:addOrder"/>
 <output wsam:Action="http://homeworks.my.org/OrderService/addOrderResponse" message="tns:addOrderResponse"/>
 </operation>
+<operation name="getOrderById">
+<input wsam:Action="http://homeworks.my.org/OrderService/getOrderByIdRequest" message="tns:getOrderById"/>
+<output wsam:Action="http://homeworks.my.org/OrderService/getOrderByIdResponse" message="tns:getOrderByIdResponse"/>
+</operation>
 </portType>
 <binding name="OrderServiceImplPortBinding" type="tns:OrderService">
-<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 <operation name="getAllOrders">
 <soap:operation soapAction=""/>
 <input>
-<soap:body use="literal" namespace="http://homeworks.my.org/"/>
+<soap:body use="literal"/>
 </input>
 <output>
-<soap:body use="literal" namespace="http://homeworks.my.org/"/>
-</output>
-</operation>
-<operation name="getOrderById">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal" namespace="http://homeworks.my.org/"/>
-</input>
-<output>
-<soap:body use="literal" namespace="http://homeworks.my.org/"/>
+<soap:body use="literal"/>
 </output>
 </operation>
 <operation name="addOrder">
 <soap:operation soapAction=""/>
 <input>
-<soap:body use="literal" namespace="http://homeworks.my.org/"/>
+<soap:body use="literal"/>
 </input>
 <output>
-<soap:body use="literal" namespace="http://homeworks.my.org/"/>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getOrderById">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
 </output>
 </operation>
 </binding>

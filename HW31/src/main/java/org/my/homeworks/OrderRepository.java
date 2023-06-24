@@ -1,10 +1,11 @@
 package org.my.homeworks;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class OrderRepository {
 
-    private ArrayList<Order> orders = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>();
 
     public Order getOrderById(int id) {
         for (Order order : orders) {
@@ -15,7 +16,7 @@ public class OrderRepository {
         return null;
     }
 
-    public ArrayList<Order> getAllOrders() {
+    public List<Order> getAllOrders() {
         return orders;
     }
 

@@ -1,6 +1,6 @@
 package org.my.homeworks;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebService;
@@ -14,7 +14,7 @@ public interface OrderService {
     Order getOrderById(int id);
 
     @WebMethod
-    ArrayList<Order> getAllOrders();
+    List<Order> getAllOrders();
 
     @WebMethod
     void addOrder(Order order);

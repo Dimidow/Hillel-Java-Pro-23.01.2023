@@ -60,7 +60,7 @@
                             <wsdlFiles>
                                 <wsdlFile>OrderService.wsdl</wsdlFile>
                             </wsdlFiles>
-                            <packageName>${service.package}.ws</packageName>
+                            <packageName>org.my.homeworks.ws.client.generated</packageName>
                         </configuration>
                     </execution>
                 </executions>

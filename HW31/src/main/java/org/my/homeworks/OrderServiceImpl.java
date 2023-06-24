@@ -1,6 +1,6 @@
 package org.my.homeworks;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.jws.WebService;
 
@@ -16,7 +16,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public ArrayList<Order> getAllOrders() {
+    public List<Order> getAllOrders() {
 
 
         return orderRepository.getAllOrders();

@@ -11,9 +11,9 @@ public class Order {
     protected Date date;
     protected double cost;
 
-    protected ArrayList<Product> products;
+    protected List<Product> products;
 
-    public Order(int id, Date date, double cost, ArrayList<Product> products) {
+    public Order(int id, Date date, double cost, List<Product> products) {
         this.id = id;
         this.date = date;
         this.cost = cost;
@@ -48,7 +48,7 @@ public class Order {
     }
 
 
-    public ArrayList <Product> getProducts() {
+    public List <Product> getProducts() {
         return products;
     }
 
