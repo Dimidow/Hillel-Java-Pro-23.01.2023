@@ -1,5 +1,7 @@
 package org.my.homeworks;
 
+import java.util.ArrayList;
+
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebService;
 import jakarta.jws.soap.SOAPBinding;
@@ -12,7 +14,7 @@ public interface OrderService {
     Order getOrderById(int id);
 
     @WebMethod
-    Product[] getAllOrders();
+    ArrayList<Order> getAllOrders();
 
     @WebMethod
     void addOrder(Order order);

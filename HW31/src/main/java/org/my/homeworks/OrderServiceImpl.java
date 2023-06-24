@@ -1,12 +1,12 @@
 package org.my.homeworks;
 
+import java.util.ArrayList;
+
 import jakarta.jws.WebService;
 
 
 @WebService(endpointInterface = "org.my.homeworks.OrderService")
 public class OrderServiceImpl implements OrderService {
-
-
     private OrderRepository orderRepository = new OrderRepository();
 
 
@@ -16,7 +16,8 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Product[] getAllOrders() {
+    public ArrayList<Order> getAllOrders() {
+
 
         return orderRepository.getAllOrders();
     }
