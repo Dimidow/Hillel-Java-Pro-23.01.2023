@@ -11,7 +11,7 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <service.package>org.my.homeworks</service.package>
+
         <jakarta.xml.ws-api.version>4.0.0</jakarta.xml.ws-api.version>
         <jaxws-rt.version>4.0.0</jaxws-rt.version>
         <jaxws-ri.version>4.0.0</jaxws-ri.version>
@@ -45,8 +45,8 @@
                 <artifactId>jaxws-maven-plugin</artifactId>
                 <version>${jaxws-maven-plugin.version}</version>
                 <configuration>
-                    <wsdlDirectory>${basedir}/src/main/resources</wsdlDirectory>
-                    <sourceDestDir>${basedir}/src/main/java</sourceDestDir>
+                    <wsdlDirectory>src/main/resources</wsdlDirectory>
+
                     <extension>true</extension>
                 </configuration>
                 <executions>
@@ -61,6 +61,7 @@
                                 <wsdlFile>OrderService.wsdl</wsdlFile>
                             </wsdlFiles>
                             <packageName>org.my.homeworks.ws.client.generated</packageName>
+                            <sourceDestDir>src/main/java</sourceDestDir>
                         </configuration>
                     </execution>
                 </executions>

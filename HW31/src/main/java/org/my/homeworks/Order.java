@@ -1,6 +1,6 @@
 package org.my.homeworks;
 
-import java.util.ArrayList;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -10,7 +10,6 @@ public class Order {
     protected int id;
     protected Date date;
     protected double cost;
-
     protected List<Product> products;
 
     public Order(int id, Date date, double cost, List<Product> products) {
@@ -18,9 +17,6 @@ public class Order {
         this.date = date;
         this.cost = cost;
         this.products = products;
-    }
-
-    public Order() {
     }
 
     public int getId() {
@@ -47,12 +43,11 @@ public class Order {
         this.cost = cost;
     }
 
-
-    public List <Product> getProducts() {
+    public List<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(ArrayList<Product> products ) {
+    public void setProducts(List<Product> products) {
         this.products = products;
     }
 

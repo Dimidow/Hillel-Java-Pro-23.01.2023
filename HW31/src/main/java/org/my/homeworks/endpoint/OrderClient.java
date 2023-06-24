@@ -1,28 +1,17 @@
 package org.my.homeworks.endpoint;
 
 
-import java.net.MalformedURLException;
-import java.net.URL;
+import org.my.homeworks.ws.generated.OrderService;
+import org.my.homeworks.ws.generated.OrderServiceImplService;
 
 
-import javax.xml.namespace.QName;
+public class OrderClient {
 
-import jakarta.xml.ws.Service;
-import org.my.homeworks.Order;
-import org.my.homeworks.OrderService;
-
-
-public class OrderClient{
-
-    public static void main(String[] args) throws MalformedURLException {
-       URL wsdlUrl = new URL("http://localhost:8080/OrderService?wsdl");
-        QName qname = new QName("http://homeworks.my.org/", "OrderServiceImplService");
-        Service service = Service.create(wsdlUrl, qname);
-
-       /* OrderServiceImplService orderServiceImplService = service.getPort(OrderServiceImplService.class);
+    public static void main(String[] args) {
+        OrderServiceImplService orderServiceImplService = new OrderServiceImplService();
         OrderService orderService = orderServiceImplService.getOrderServiceImplPort();
-        orderService.addOrder(new Order());*/
-
-
+        orderService.addOrder();
+        System.out.println(orderService.getAllOrders());
+        System.out.println(orderService.getOrderById(1));
     }
 }

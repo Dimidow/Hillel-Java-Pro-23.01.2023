@@ -17,5 +17,5 @@ public interface OrderService {
     List<Order> getAllOrders();
 
     @WebMethod
-    void addOrder(Order order);
+    void addOrder();
 }

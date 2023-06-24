@@ -23,7 +23,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public void addOrder(Order order) {
-        orderRepository.addOrder(order);
+    public void addOrder() {
+        orderRepository.addOrder();
     }
 }
