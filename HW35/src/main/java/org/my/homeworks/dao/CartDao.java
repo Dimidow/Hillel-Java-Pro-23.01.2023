@@ -19,7 +19,7 @@ public class CartDao implements StoreDao<Cart> {
 
     private JdbcTemplate jdbcTemplate;
 
-    private static final Logger logger = LoggerFactory.getLogger(ProductDao.class);
+    private static final Logger logger = LoggerFactory.getLogger(CartDao.class);
 
     @Autowired
     public void init(DataSource dataSource){
