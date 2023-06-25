@@ -3,11 +3,8 @@ package org.my.homework.models;
 import java.util.List;
 
 import org.my.homework.services.ProductRepository;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
-@Component
-@Scope("prototype")
+
 public class Cart {
 
 

@@ -10,11 +10,13 @@ import org.my.homework.services.ConsoleCartService;
 import org.my.homework.services.ProductRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class MyConfiguration {
 
     @Bean
+    @Scope("prototype")
     public ProductRepository productRepository() {
         return new ProductRepository(products());
     }
