@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/HW36
+    username: root
+    password: 1qazXSW@3edc
+    driver-class-name: com.mysql.cj.jdbc.Driver
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.my.homeworks.HW36: INFO
